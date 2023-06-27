@@ -60,7 +60,7 @@
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "update-version": "yarn version --no-git-tag-version",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "pre-release": "yarn prettier && yarn lint yarn update-version"
+    "pre-release": "yarn update-version && yarn prettier && yarn lint"
   },
   "eslintConfig": {
     "extends": [
