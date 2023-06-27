@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "description": "UI theme made with MUI v5",
   "author": "J-Meira",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/J-Meira/marvel-heroes.git"
   },
   "private": false,
   "dependencies": {
-    "@j-meira/mui-theme": "^0.1.1",
+    "@j-meira/mui-theme": "^0.1.2",
     "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
