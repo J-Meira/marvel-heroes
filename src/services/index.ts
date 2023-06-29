@@ -14,8 +14,6 @@ API.interceptors.request.use((config) => {
     ts: 1,
     apikey,
     hash,
-    // apikey: apikey,
-    // hash: hash,
   };
   return config;
 });

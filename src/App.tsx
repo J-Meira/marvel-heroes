@@ -1,20 +1,44 @@
+import { useState } from 'react';
+import { Grid } from '@mui/material';
 import { Button, MultiProvider } from '@j-meira/mui-theme';
-import { useEffect } from 'react';
+
 import { CharactersService } from './services';
+import { IGetAll } from './services/Characters';
 
 export const App = () => {
-  useEffect(() => {
-    CharactersService.getAll({}).then((result) => {
-      if (result) console.log(result);
-    });
+  const [img, setImg] = useState<string[]>([]);
+  const [params, setParams] = useState<IGetAll>({
+    limit: 100,
+    offset: 0,
+    orderBy: 'name',
+    nameStartsWith: undefined,
+  });
 
-    // eslint-disable-next-line
-  }, []);
+  const getCharacters = () => {
+    CharactersService.getAll(params).then((result) => {
+      if (result) {
+        setImg(
+          result.data.results.map((r) => {
+            const { path, extension } = r.thumbnail;
+            return `${path}/standard_medium.${extension}`.replace(
+              'http:',
+              'https:',
+            );
+          }),
+        );
+        setParams({
+          ...params,
+          offset: params.offset + params.limit,
+        });
+      }
+    });
+  };
 
   return (
     <MultiProvider
       adapterLocalePtBR
-      snackAnchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+      snackAnchorHorizontal='right'
+      snackAnchorVertical='top'
       snackAutoHideDuration={5000}
       snackMax={3}
       palette={{
@@ -32,9 +56,14 @@ export const App = () => {
         },
       }}
     >
-      <div className='main'>
-        <Button>test</Button>
-      </div>
+      <Grid container className='main-expanded'>
+        <Grid item xs={12}>
+          <Button onClick={getCharacters}>Get List</Button>
+        </Grid>
+        <Grid item xs={12}>
+          {img && img.map((i, f) => <img key={f} src={i} alt='thumb' />)}
+        </Grid>
+      </Grid>
     </MultiProvider>
   );
 };

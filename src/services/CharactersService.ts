@@ -1,15 +1,8 @@
-import { useToast } from '@j-meira/mui-theme';
 import { API } from '.';
-import { ICharacterDataWrapper } from './Characters';
+import { useToast } from '@j-meira/mui-theme';
+import { ICharacterDataWrapper, IGetAll } from './Characters';
 
 const path = '/v1/public/characters';
-
-export interface IGetAll {
-  nameStartsWith?: string;
-  order?: string;
-  limit?: number;
-  offset?: number;
-}
 
 const getAll = async (
   data: IGetAll,
