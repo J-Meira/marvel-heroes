@@ -1,0 +1,56 @@
+.tool-bar-full {
+  .navigation-bar {
+    .logo {
+      font-size: 1.2rem;
+      padding: 0.75rem 0;
+      cursor: pointer;
+      + .menu {
+        margin-left: 2rem;
+      }
+    }
+    .menu {
+      flex-grow: 1;
+      display: flex;
+      .MuiButton-root {
+        color: $white;
+        &:hover {
+          background-color: $primary-dark;
+        }
+        + .MuiButton-root {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+    .menu-mobile {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .tool-bar-full {
+    .navigation-bar {
+      flex-grow: 1;
+      .menu {
+        display: none;
+      }
+
+      .menu-mobile {
+        display: flex;
+        position: absolute;
+        left: 0;
+        color: $white;
+      }
+
+      .social {
+        display: flex;
+        position: absolute;
+        right: 0;
+      }
+    }
+    .actions-bar {
+      position: absolute;
+      right: 16px;
+    }
+  }
+}

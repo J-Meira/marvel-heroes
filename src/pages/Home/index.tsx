@@ -39,7 +39,7 @@ export const HomePage = () => {
   };
 
   return (
-    <Grid container className='main-full' sx={{ paddingTop: '10rem' }}>
+    <Grid container>
       <Button
         size='large'
         onClick={() => navigate('/context')}
