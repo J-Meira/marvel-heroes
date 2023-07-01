@@ -1,6 +1,6 @@
 import { API } from '.';
 import { useToast } from '@j-meira/mui-theme';
-import { ICharacterDataWrapper, IGetAll } from './Characters';
+import { ICharacterDataWrapper, IGetAll } from '../types';
 
 const path = '/v1/public/characters';
 
