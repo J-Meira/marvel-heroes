@@ -1,5 +1,6 @@
 import { MultiProvider } from '@j-meira/mui-theme';
-import { Layout } from './layout';
+
+import { Layout } from './components';
 
 export const App = () => (
   <MultiProvider
