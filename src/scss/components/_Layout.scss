@@ -18,3 +18,9 @@
     background-color: $primary-hover;
   }
 }
+
+@media screen and (max-width: 899px) {
+  .main-container {
+    padding: 5rem 8px 2rem 8px;
+  }
+}
