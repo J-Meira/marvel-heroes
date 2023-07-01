@@ -1,10 +1,3 @@
-export interface IGetAll {
-  nameStartsWith?: string;
-  orderBy?: string;
-  limit: number;
-  offset: number;
-}
-
 export interface IUrl {
   type: string;
   url: string;
