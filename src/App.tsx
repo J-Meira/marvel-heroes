@@ -43,9 +43,9 @@ export const App = () => {
       snackMax={3}
       palette={{
         primary: {
-          light: '#6fddff',
-          main: '#29abe2',
-          dark: '#007cb0',
+          light: '#ffb402',
+          main: '#FF9100',
+          dark: '#ff7100',
           contrastText: '#fff',
         },
         secondary: {
