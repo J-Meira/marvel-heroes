@@ -1,7 +1,7 @@
 {
   "name": "marvel-heroes",
   "version": "0.1.0",
-  "description": "UI theme made with MUI v5",
+  "description": "Marvel Heros List in React",
   "author": "J-Meira",
   "license": "MIT",
   "repository": {
