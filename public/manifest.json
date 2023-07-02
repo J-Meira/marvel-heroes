@@ -1,7 +1,7 @@
 {
-  "short_name": "JM Cockctails",
-  "name": "JM Cockctails",
-  "description": "Preparo de Coquetéis, insumos e licores artesanais",
+  "short_name": "M-heros",
+  "name": "Marvel heros",
+  "description": "Marvel Heros List in React",
   "icons": [
     {
       "src": "favicon.png",
@@ -51,9 +51,9 @@
   ],
   "start_url": ".",
   "display": "fullscreen",
-  "orientation": "landscape",
-  "theme_color": "#FFCB08",
-  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "theme_color": "#ff9100",
+  "background_color": "#121212",
   "shortcuts": [
     {
       "name": "Home",
