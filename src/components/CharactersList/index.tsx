@@ -178,7 +178,9 @@ export const CharactersList = ({
           onChange={(e) => onHandleRows(Number(e.target.value))}
         />
         <Typography variant='caption'>
-          {`${params.offset + 1}-${params.offset + characters.length}
+          {`${totalOfCharacters > 0 ? params.offset + 1 : 0}-${
+            params.offset + characters.length
+          }
           of ${totalOfCharacters}`}
         </Typography>
       </Grid>
