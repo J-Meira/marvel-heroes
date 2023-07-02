@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { ContextPage, HomePage, NoutFoundPage, ReduxPage } from '../pages';
+import { ContextPage, HomePage, NotFoundPage, ReduxPage } from '../pages';
 
 export const AppRoutes = () => (
   <Routes>
@@ -8,6 +8,6 @@ export const AppRoutes = () => (
     <Route path='/redux' element={<ReduxPage />} />
     <Route path='/redux/:charId' element={<ReduxPage />} />
     <Route path='/' element={<HomePage />} />
-    <Route path='*' element={<NoutFoundPage />} />
+    <Route path='*' element={<NotFoundPage />} />
   </Routes>
 );

@@ -1,6 +1,8 @@
-import { useParams } from 'react-router-dom';
+import { LoadingProvider } from '../../contexts';
+import { Page } from './Page';
 
-export const ContextPage = () => {
-  const { charId } = useParams();
-  return <div>Context:{charId}</div>;
-};
+export const ContextPage = () => (
+  <LoadingProvider>
+    <Page />
+  </LoadingProvider>
+);

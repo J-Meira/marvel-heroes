@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Grid } from '@mui/material';
 import { Button } from '@j-meira/mui-theme';
 
-export const NoutFoundPage = () => {
+export const NotFoundPage = () => {
   const navigate = useNavigate();
   return (
     <Grid container>

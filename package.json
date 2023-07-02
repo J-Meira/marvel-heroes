@@ -10,7 +10,7 @@
   },
   "private": false,
   "dependencies": {
-    "@j-meira/mui-theme": "^0.2.1",
+    "@j-meira/mui-theme": "^0.2.2",
     "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
