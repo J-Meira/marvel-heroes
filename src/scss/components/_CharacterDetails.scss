@@ -1,0 +1,95 @@
+.character-details {
+  .MuiPaper-elevation {
+    overflow: visible;
+    width: 90%;
+    max-width: 650px;
+    background-image: none;
+  }
+
+  .details-close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background-color: $primary;
+    color: $white;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  .MuiGrid-container {
+    margin: 0;
+    width: 100%;
+  }
+
+  .hero-img {
+    height: 370px;
+    padding: 0 !important;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      margin: -40px;
+      width: 80px;
+      height: 80px;
+      transform: rotate(45deg);
+      background-color: $white;
+    }
+    &:before {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .hero-name {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .hero-resume {
+    max-height: 280px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.75rem;
+    text-align: center;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: RGBA(48, 48, 48, 0);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $primary;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: $primary-dark;
+    }
+  }
+}
+
+.character-details-dark {
+  .hero-img {
+    &:before,
+    &:after {
+      background-color: #121212;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .character-details {
+    .hero-resume {
+      max-height: 100%;
+      padding: 0;
+    }
+  }
+}
