@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Grid, Typography } from '@mui/material';
+import { Search as SearchIcon } from '@mui/icons-material';
 import {
   DataTablePagination,
   Input,
@@ -7,7 +8,6 @@ import {
   SelectOptionsProps,
   useDebounce,
 } from '@j-meira/mui-theme';
-import { Search as SearchIcon } from '@mui/icons-material';
 import { CharacterCard, ICharacterCardProps } from '..';
 import { ICharacter, IGetAll } from '../../types';
 
@@ -190,7 +190,7 @@ export const CharactersList = ({
           />
         ))}
         {characters.length === 0 && search !== '' && (
-          <span>Nout found</span>
+          <Typography variant='caption'>No cards to display.</Typography>
         )}
       </Grid>
       <DataTablePagination
