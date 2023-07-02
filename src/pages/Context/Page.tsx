@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Grid } from '@mui/material';
+import { useDebounce } from '@j-meira/mui-theme';
 
 import {
   CharacterDetails,
   CharactersList,
   Loading,
 } from '../../components';
+
+import { useLoadingContext } from '../../contexts';
 import { CharactersService } from '../../services';
 import { ICharacter, IGetAll } from '../../types';
-import { useLoadingContext } from '../../contexts';
-import { useDebounce } from '@j-meira/mui-theme';
 
 export const Page = () => {
   const { id } = useParams();

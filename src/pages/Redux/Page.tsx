@@ -1,20 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Grid } from '@mui/material';
+import { useDebounce } from '@j-meira/mui-theme';
+
+import { useAppDispatch, useAppSelector } from '../../redux';
 
 import {
   CharacterDetails,
   CharactersList,
   Loading,
 } from '../../components';
-import { useDebounce } from '@j-meira/mui-theme';
-import { useAppDispatch, useAppSelector } from '../../redux';
-import { getLoading } from '../../redux/reducers';
+
 import {
   clearCharacter,
   getCharacter,
   getCharacters,
 } from '../../redux/actions';
+import { getLoading } from '../../redux/reducers';
 
 export const Page = () => {
   const { id } = useParams();
