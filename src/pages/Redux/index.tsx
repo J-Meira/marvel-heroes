@@ -1,6 +1,9 @@
-import { useParams } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from '../../redux';
+import { Page } from './Page';
 
-export const ReduxPage = () => {
-  const { id } = useParams();
-  return <div>Redux{id}</div>;
-};
+export const ReduxPage = () => (
+  <Provider store={store}>
+    <Page />
+  </Provider>
+);

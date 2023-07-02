@@ -11,7 +11,7 @@ COPY ./nginx.conf /nginx.conf
 
 COPY package*.json /app/
 
-RUN npm install -g npm-cli-login
+RUN yarn global add npm-cli-login
 
 RUN npm-cli-login -u ${NPM_USER} -p ${NPM_PASS} -e ${NPM_EMAIL} -r ${NPM_URL} -s "@j-meira"
 
