@@ -47,8 +47,19 @@ export const Header = () => {
     });
   };
 
-  const isSelected = (route: string) =>
-    location.pathname.indexOf(route) >= 0;
+  const isSelected = (route: string): boolean => {
+    const pathname = location.pathname;
+    const paths: string[] = pathname.split('/').filter((p) => p !== '');
+
+    switch (paths.length) {
+      case 1:
+        return route === pathname;
+      case 2:
+        return route === '/' + paths[0];
+      default:
+        return false;
+    }
+  };
 
   return (
     <>

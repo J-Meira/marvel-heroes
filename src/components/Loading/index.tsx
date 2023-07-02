@@ -1,9 +1,11 @@
 import { Box, CircularProgress, Paper } from '@mui/material';
+
 import { ReactComponent as Logo } from '../../assets/icon-marvel.svg';
 
 export interface ILoadingProps {
   isLoading: boolean;
 }
+
 export const Loading = ({ isLoading }: ILoadingProps) => (
   <>
     <Paper
