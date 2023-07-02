@@ -4,7 +4,6 @@ import { Layout } from './components';
 
 export const App = () => (
   <MultiProvider
-    adapterLocalePtBR
     snackAnchorHorizontal='right'
     snackAnchorVertical='top'
     snackAutoHideDuration={5000}

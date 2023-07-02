@@ -15,6 +15,22 @@ const initialMenu: ListMenuProps = {
   anchorEl: null,
   list: [],
 };
+
+const pages = [
+  {
+    label: 'About',
+    link: '/about',
+  },
+  {
+    label: 'With Context',
+    link: '/context',
+  },
+  {
+    label: 'With Redux',
+    link: '/redux',
+  },
+];
+
 export const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,16 +39,10 @@ export const Header = () => {
   const openMenu = (event: MouseEvent<HTMLElement>) => {
     setMenuMobile({
       open: true,
-      list: [
-        {
-          label: 'With Context',
-          action: () => navigate('/context'),
-        },
-        {
-          label: 'With Redux',
-          action: () => navigate('/redux'),
-        },
-      ],
+      list: pages.map((p) => ({
+        label: p.label,
+        action: () => navigate(p.link),
+      })),
       anchorEl: event.currentTarget,
     });
   };
@@ -54,26 +64,19 @@ export const Header = () => {
               M-Heros
             </Typography>
             <Box className='menu'>
-              <Button
-                className={
-                  isSelected('/context') ? 'menu-selected' : undefined
-                }
-                variant='outlined'
-                fullWidth={false}
-                onClick={() => navigate('/context')}
-              >
-                With Context
-              </Button>
-              <Button
-                className={
-                  isSelected('/redux') ? 'menu-selected' : undefined
-                }
-                variant='outlined'
-                fullWidth={false}
-                onClick={() => navigate('/redux')}
-              >
-                With Redux
-              </Button>
+              {pages.map((p) => (
+                <Button
+                  key={p.link}
+                  className={
+                    isSelected(p.link) ? 'menu-selected' : undefined
+                  }
+                  variant='outlined'
+                  fullWidth={false}
+                  onClick={() => navigate(p.link)}
+                >
+                  {p.label}
+                </Button>
+              ))}
             </Box>
             <Button
               className='menu-mobile'
