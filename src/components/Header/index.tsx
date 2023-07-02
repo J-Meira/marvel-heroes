@@ -37,7 +37,8 @@ export const Header = () => {
     });
   };
 
-  const isSelected = (route: string) => location.pathname === route;
+  const isSelected = (route: string) =>
+    location.pathname.indexOf(route) >= 0;
 
   return (
     <>
