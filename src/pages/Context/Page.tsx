@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Grid } from '@mui/material';
 
 import {
@@ -14,6 +14,7 @@ import { useDebounce } from '@j-meira/mui-theme';
 
 export const Page = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const { debounce } = useDebounce(50, false);
   const { isLoading, setLoading, removeLoading } = useLoadingContext();
   const [characters, setCharacters] = useState<ICharacter[]>([]);
@@ -47,6 +48,7 @@ export const Page = () => {
   const closeDetail = () => {
     setOpen(false);
     setCharacter(undefined);
+    if (id) navigate('/context');
   };
 
   useEffect(() => {
