@@ -1,17 +1,27 @@
-import { useState } from 'react';
-// import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Grid } from '@mui/material';
 
-import { CharactersList, Loading } from '../../components';
+import {
+  CharacterDetails,
+  CharactersList,
+  Loading,
+} from '../../components';
 import { CharactersService } from '../../services';
 import { ICharacter, IGetAll } from '../../types';
 import { useLoadingContext } from '../../contexts';
+import { useDebounce } from '@j-meira/mui-theme';
 
 export const Page = () => {
-  // const { charId } = useParams();
+  const { id } = useParams();
+  const { debounce } = useDebounce(50, false);
   const { isLoading, setLoading, removeLoading } = useLoadingContext();
   const [characters, setCharacters] = useState<ICharacter[]>([]);
   const [totalOfCharacters, setTotalOfCharacters] = useState(0);
+  const [character, setCharacter] = useState<ICharacter | undefined>(
+    undefined,
+  );
+  const [open, setOpen] = useState(false);
 
   const getCharacters = (params: IGetAll) => {
     setLoading();
@@ -24,15 +34,53 @@ export const Page = () => {
     });
   };
 
+  const openDetail = (paramId: number) => {
+    setLoading();
+    CharactersService.getById(paramId).then((result) => {
+      removeLoading();
+      if (result && result.data.results[0]) {
+        setCharacter(result.data.results[0]);
+      }
+    });
+  };
+
+  const closeDetail = () => {
+    setOpen(false);
+    setCharacter(undefined);
+  };
+
+  useEffect(() => {
+    if (character) setOpen(true);
+
+    // eslint-disable-next-line
+  }, [character]);
+
+  useEffect(() => {
+    debounce(() => {
+      if (id) {
+        openDetail(Number(id));
+      }
+    });
+
+    // eslint-disable-next-line
+  }, [id]);
+
   return (
     <Grid container justifyContent='center' flexDirection='column'>
       <CharactersList
         characters={characters}
         onGetCharacters={getCharacters}
-        openDetail={(id) => console.log(id)}
+        openDetail={(id) => openDetail(id)}
         totalOfCharacters={totalOfCharacters}
       />
       <Loading isLoading={isLoading} />
+      {character && (
+        <CharacterDetails
+          open={open}
+          toggle={closeDetail}
+          data={character}
+        />
+      )}
     </Grid>
   );
 };
