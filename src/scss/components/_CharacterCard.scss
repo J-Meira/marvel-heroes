@@ -1,0 +1,85 @@
+.character-card {
+  width: 180px;
+  margin: 1rem;
+  padding: 1rem;
+  position: relative;
+  background-color: $white !important;
+  box-shadow: 0px 3px 6px #00000029;
+  cursor: pointer;
+
+  .hover-effect {
+    width: calc(180px + 2rem);
+    height: calc(270px + 2rem);
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background: transparent linear-gradient(180deg, #000 -30%, #00000000 100%) 0% 0% no-repeat padding-box;
+    opacity: 0;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 270px;
+    background-position: top left;
+    background-size: contain;
+    position: relative;
+    overflow: hidden;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      margin: -25px;
+      width: 50px;
+      height: 50px;
+      transform: rotate(45deg);
+      background-color: $white;
+    }
+    &:before {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .hero-name {
+    background-image: url('../../assets/hero-name.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 160px;
+    bottom: 1.2rem;
+    left: 1.6rem;
+    font-size: 12px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding-left: 0.5rem;
+    span {
+      width: 80%;
+      color: #000;
+    }
+  }
+
+  &:hover {
+    scale: 1.09;
+    .hover-effect {
+      opacity: 1;
+    }
+  }
+}
+
+.character-card-dark {
+  background-color: #000 !important;
+
+  .hover-effect {
+    background: transparent linear-gradient(180deg, #ffffff -30%, #ffffff00 100%) 0% 0% no-repeat padding-box;
+  }
+  .hero-img {
+    &:before,
+    &:after {
+      background-color: #000;
+    }
+  }
+}
