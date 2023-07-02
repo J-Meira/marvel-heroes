@@ -1,5 +1,5 @@
 import { MouseEvent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import {
@@ -17,7 +17,7 @@ const initialMenu: ListMenuProps = {
 };
 export const Header = () => {
   const navigate = useNavigate();
-
+  const location = useLocation();
   const [menuMobile, setMenuMobile] = useState<ListMenuProps>(initialMenu);
 
   const openMenu = (event: MouseEvent<HTMLElement>) => {
@@ -36,6 +36,9 @@ export const Header = () => {
       anchorEl: event.currentTarget,
     });
   };
+
+  const isSelected = (route: string) => location.pathname === route;
+
   return (
     <>
       <JMHeader
@@ -51,6 +54,9 @@ export const Header = () => {
             </Typography>
             <Box className='menu'>
               <Button
+                className={
+                  isSelected('/context') ? 'menu-selected' : undefined
+                }
                 variant='outlined'
                 fullWidth={false}
                 onClick={() => navigate('/context')}
@@ -58,6 +64,9 @@ export const Header = () => {
                 With Context
               </Button>
               <Button
+                className={
+                  isSelected('/redux') ? 'menu-selected' : undefined
+                }
                 variant='outlined'
                 fullWidth={false}
                 onClick={() => navigate('/redux')}

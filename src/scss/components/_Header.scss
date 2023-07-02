@@ -8,6 +8,7 @@
         margin-left: 2rem;
       }
     }
+
     .menu {
       flex-grow: 1;
       display: flex;
@@ -21,8 +22,13 @@
         }
       }
     }
+
     .menu-mobile {
       display: none;
+    }
+
+    .menu-selected {
+      text-decoration: underline;
     }
   }
 }
