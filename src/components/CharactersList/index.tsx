@@ -85,6 +85,16 @@ export const CharactersList = ({
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(initialRows);
 
+  const onHandleOrderBy = (order: number) => {
+    const test = orberByList.find((o) => o.value === order);
+    setOrderBy(order);
+    setParams({
+      ...params,
+      orderBy: test?.obj.apiValue,
+      nameStartsWith: search !== '' ? search : undefined,
+    });
+  };
+
   const onHandlePage = (page: number) => {
     setCurrentPage(page);
     setParams({
@@ -121,19 +131,6 @@ export const CharactersList = ({
 
   useEffect(() => {
     debounce(() => {
-      const order = orberByList.find((o) => o.value === orderBy);
-      onGetCharacters({
-        ...params,
-        orderBy: order?.obj.apiValue,
-        nameStartsWith: search !== '' ? search : undefined,
-      });
-    });
-
-    // eslint-disable-next-line
-  }, [orderBy]);
-
-  useEffect(() => {
-    debounce(() => {
       onGetCharacters({
         ...params,
         nameStartsWith: search !== '' ? search : undefined,
@@ -164,7 +161,7 @@ export const CharactersList = ({
         className='order'
         options={orberByList}
         value={orderBy}
-        onChange={(e) => setOrderBy(Number(e.target.value))}
+        onChange={(e) => onHandleOrderBy(Number(e.target.value))}
       />
 
       <Grid container className='rows'>
