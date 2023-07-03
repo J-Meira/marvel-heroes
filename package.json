@@ -10,7 +10,7 @@
   },
   "private": false,
   "dependencies": {
-    "@j-meira/mui-theme": "^0.2.2",
+    "@j-meira/mui-theme": "https://github.com/J-Meira/mui-theme",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "react": "^18.2.0",
