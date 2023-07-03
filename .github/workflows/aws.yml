@@ -34,7 +34,7 @@ jobs:
 
       - name: Install depends
         run: |
-          yarn --ignore-scripts
+          yarn install --ignore-scripts --network-timeout 1000000000
 
       - name: Build
         run: |

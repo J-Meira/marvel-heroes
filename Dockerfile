@@ -7,7 +7,7 @@ COPY ./nginx.conf /nginx.conf
 
 COPY package*.json /app/
 
-RUN yarn --ignore-scripts
+RUN yarn install --ignore-scripts --network-timeout 1000000000
 
 COPY ./ /app/
 
