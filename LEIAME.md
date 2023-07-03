@@ -19,7 +19,6 @@ Documentação e Ambiente Padrão de Desenvolvimento
 - [Configuração](#configuração)
   - [Criar o arquivo .env](#criar-o-arquivo-env)
   - [Editar os arquivos de host do Windows](#editar-os-arquivos-de-host-do-windows)
-  - [Fazer login no repositório de pacotes do GitHub](#fazer-login-no-repositório-de-pacotes-do-github)
 - [Uso](#uso)
   - [Instalar as dependências](#instalar-as-dependências)
   - [Observações](#observações)
@@ -159,14 +158,6 @@ Siga estas etapas para editar os arquivos de host do Windows:
 ```
 
 4. Reinicie a máquina.
-
-### Fazer login no repositório de pacotes do GitHub
-
-Para fazer login no repositório de pacotes do GitHub, execute o seguinte comando:
-
-```bash
-yarn login --registry=https://npm.pkg.github.com --scope=@j-meira
-```
 
 ## Uso
 
