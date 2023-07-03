@@ -19,7 +19,6 @@ Documentation and Standard Development Environment
 - [Configuration](#configuration)
   - [Create .env file](#create-env-file)
   - [Edit Windows host files](#edit-windows-host-files)
-  - [Login on GitHub package repository](#login-on-github-package-repository)
 - [Usage](#usage)
   - [Install dependencies](#install-dependencies)
   - [Observations](#observations)
@@ -156,14 +155,6 @@ Follow these steps to edit the Windows host files:
 ```
 
 4. Restart the machine.
-
-### Login on GitHub package repository
-
-To login to the GitHub package repository, run the following command:
-
-```bash
-yarn login --registry=https://npm.pkg.github.com --scope=@j-meira
-```
 
 ## Usage
 
