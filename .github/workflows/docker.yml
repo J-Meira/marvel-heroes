@@ -35,5 +35,5 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build . -t ${{ vars.REPOSITORY_NAME }}:${{ env.TAG_NAME }} --build-arg NPM_USER=${{ vars.NPM_USER }} --build-arg NPM_EMAIL=${{ vars.NPM_EMAIL }} --build-arg NPM_PASS=${{ secrets.NPM_PASS }} --build-arg NPM_URL=${{ vars.NPM_URL }}
+          docker build . -t ${{ vars.REPOSITORY_NAME }}:${{ env.TAG_NAME }}
           docker push ${{ vars.REPOSITORY_NAME }}:${{ env.TAG_NAME }}
