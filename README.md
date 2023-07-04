@@ -162,7 +162,7 @@ Follow these steps to edit the Windows host files:
 To login to the GitHub package repository, run the following command:
 
 ```bash
-yarn login --registry=https://npm.pkg.github.com --scope=@j-meira
+npm login --registry=https://npm.pkg.github.com --scope=@j-meira
 ```
 
 ## Usage
