@@ -85,11 +85,34 @@ export const AboutPage = () => {
           <ul>
             <li>
               <a
+                href='https://xd.adobe.com/view/5192aaaf-a7a0-46e8-8b62-e1afba083a53-04c1/?fullscreen'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                on XD;
+              </a>
+            </li>
+            <li>
+              <a
                 href='https://www.behance.net/gallery/174274841/Marvel-Heroes'
                 rel='noopener noreferrer'
                 target='_blank'
               >
                 on Behance;
+              </a>
+            </li>
+          </ul>
+        </Typography>
+        <Typography variant='body1' className='description'>
+          <b>Repository:</b>
+          <ul>
+            <li>
+              <a
+                href='https://github.com/J-Meira/marvel-heroes'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                GitHub;
               </a>
             </li>
           </ul>
