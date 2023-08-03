@@ -30,7 +30,7 @@ Documentation and Standard Development Environment
 
 Marvel Heroes List in React.
 
-[Click here](https://m-heros.jm.app.br) to access the demo published on AWS server.
+[Click here](https://m-heroes.jm.app.br) to access the demo published on AWS server.
 
 I based the application on the Material Designer system, leveraging my expertise as a senior front-end developer focusing on React with TypeScript. To streamline the development process, I utilized my own developer theme called Mui Theme, which aligns with Mui Core V5. This theme serves as a centralized resource for setting up and defining components, allowing me to efficiently manage and maintain multiple projects in a single place. If you'd like to explore the Mui Theme, you can find it at [Mui Theme](https://mui-theme.jm.app.br). This approach not only enhances consistency across projects but also simplifies maintenance, making it easier to update and customize the components as needed.
 

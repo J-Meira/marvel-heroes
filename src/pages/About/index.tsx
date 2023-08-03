@@ -18,7 +18,7 @@ export const AboutPage = () => {
     <Grid container className='about-page'>
       <Grid item xs={12}>
         <Typography variant='h2' className='page-title'>
-          Marvel Heros List in{' '}
+          Marvel Heroes List in{' '}
           <a
             href='https://react.dev'
             rel='noopener noreferrer'
@@ -85,16 +85,7 @@ export const AboutPage = () => {
           <ul>
             <li>
               <a
-                href='https://xd.adobe.com/view/5192aaaf-a7a0-46e8-8b62-e1afba083a53-04c1/?fullscreen'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                on XD;
-              </a>
-            </li>
-            <li>
-              <a
-                href='https://www.behance.net/gallery/174274841/Marvel-Heros'
+                href='https://www.behance.net/gallery/174274841/Marvel-Heroes'
                 rel='noopener noreferrer'
                 target='_blank'
               >

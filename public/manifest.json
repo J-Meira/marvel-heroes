@@ -1,7 +1,7 @@
 {
-  "short_name": "M-heros",
-  "name": "Marvel heros",
-  "description": "Marvel Heros List in React",
+  "short_name": "M-heroes",
+  "name": "Marvel heroes",
+  "description": "Marvel Heroes List in React",
   "icons": [
     {
       "src": "favicon.png",

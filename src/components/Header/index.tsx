@@ -72,7 +72,7 @@ export const Header = () => {
               onClick={() => navigate('/')}
               component='h1'
             >
-              M-Heros
+              M-Heroes
             </Typography>
             <Box className='menu'>
               {pages.map((p) => (

@@ -1,4 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-Sitemap: https://m-heros.jm.app.br/sitemap.xml
+Sitemap: https://m-heroes.jm.app.br/sitemap.xml
