@@ -30,7 +30,7 @@ Documentação e Ambiente Padrão de Desenvolvimento
 
 Lista de Heróis da Marvel em React.
 
-[Clique aqui](https://m-heros.jm.app.br) para acessar a demonstração publicada no servidor AWS.
+[Clique aqui](https://m-heroes.jm.app.br) para acessar a demonstração publicada no servidor AWS.
 
 Baseei a aplicação no sistema Material Designer, aproveitando minha experiência como desenvolvedor front-end sênior com foco em React com TypeScript. Para agilizar o processo de desenvolvimento, utilizei meu próprio tema de desenvolvedor chamado Mui Theme, que se alinha ao Mui Core V5. Esse tema serve como um recurso centralizado para configurar e definir componentes, permitindo que eu gerencie e mantenha vários projetos em um único lugar de forma eficiente. Se você quiser explorar o Mui Theme, pode encontrá-lo em [Mui Theme](https://mui-theme.jm.app.br). Essa abordagem não apenas melhora a consistência entre os projetos, mas também simplifica a manutenção, tornando mais fácil atualizar e personalizar os componentes conforme necessário.
 
