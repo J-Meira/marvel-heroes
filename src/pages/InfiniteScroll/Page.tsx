@@ -17,7 +17,6 @@ import {
   CharacterCard,
   CharacterDetails,
   Loading,
-  SEO,
   orberByList,
 } from '../../components';
 
@@ -170,7 +169,6 @@ export const Page = () => {
 
   return (
     <Box className='infinite-scroll'>
-      <SEO title='M-Heroes - Infinite Scroll' />
       <Grid
         sx={{
           backgroundColor: backgroundColor,

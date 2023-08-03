@@ -1,6 +1,5 @@
 import moment from 'moment';
 import { Grid, Typography } from '@mui/material';
-import { SEO } from '../../components';
 
 const date = new Date();
 
@@ -18,7 +17,6 @@ export const AboutPage = () => {
   return (
     <Grid container className='about-page'>
       <Grid item xs={12}>
-        <SEO title='M-Heroes - About' />
         <Typography variant='h2' className='page-title'>
           Marvel Heroes List in{' '}
           <a

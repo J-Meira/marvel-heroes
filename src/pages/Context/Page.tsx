@@ -7,7 +7,6 @@ import {
   CharacterDetails,
   CharactersList,
   Loading,
-  SEO,
 } from '../../components';
 
 import { useLoadingContext } from '../../contexts';
@@ -71,7 +70,6 @@ export const Page = () => {
 
   return (
     <Grid container justifyContent='center' flexDirection='column'>
-      <SEO title='M-Heroes - Context' />
       <CharactersList
         characters={characters}
         onGetCharacters={getCharacters}

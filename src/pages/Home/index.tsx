@@ -4,13 +4,11 @@ import { Button } from '@j-meira/mui-theme';
 
 import { ReactComponent as LogoContext } from '../../assets/logo-context.svg';
 import { ReactComponent as LogoRedux } from '../../assets/logo-redux.svg';
-import { SEO } from '../../components';
 
 export const HomePage = () => {
   const navigate = useNavigate();
   return (
     <Grid container className='home-page'>
-      <SEO title='M-Heroes' />
       <Typography variant='h2' component='h2'>
         To start choose the state control framework:
       </Typography>

@@ -1,6 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
 import { MultiProvider } from '@j-meira/mui-theme';
-import { HelmetProvider } from 'react-helmet-async';
 
 import { Footer, Header } from './components';
 import { AppRoutes } from './routes';
@@ -27,11 +26,9 @@ export const App = () => (
     }}
   >
     <BrowserRouter>
-      <HelmetProvider>
-        <Header />
-        <AppRoutes />
-        <Footer />
-      </HelmetProvider>
+      <Header />
+      <AppRoutes />
+      <Footer />
     </BrowserRouter>
   </MultiProvider>
 );
