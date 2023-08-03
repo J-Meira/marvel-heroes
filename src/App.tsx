@@ -1,6 +1,8 @@
+import { BrowserRouter } from 'react-router-dom';
 import { MultiProvider } from '@j-meira/mui-theme';
 
-import { Layout } from './components';
+import { Footer, Header } from './components';
+import { AppRoutes } from './routes';
 
 export const App = () => (
   <MultiProvider
@@ -23,6 +25,10 @@ export const App = () => (
       },
     }}
   >
-    <Layout />
+    <BrowserRouter>
+      <Header />
+      <AppRoutes />
+      <Footer />
+    </BrowserRouter>
   </MultiProvider>
 );

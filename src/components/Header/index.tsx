@@ -29,6 +29,10 @@ const pages = [
     label: 'With Redux',
     link: '/redux',
   },
+  {
+    label: 'Infinite Scroll',
+    link: '/infinite-scroll',
+  },
 ];
 
 export const Header = () => {

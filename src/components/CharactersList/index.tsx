@@ -20,7 +20,7 @@ export interface ICharactersListProps {
 
 const initialRows = Number(localStorage.getItem('M_HEROS_RP') || '12');
 
-const pagesList: SelectOptionsProps[] = [
+export const pagesList: SelectOptionsProps[] = [
   {
     value: 4,
     label: '4',
@@ -43,7 +43,7 @@ const pagesList: SelectOptionsProps[] = [
   },
 ];
 
-const orberByList: SelectOptionsProps[] = [
+export const orberByList: SelectOptionsProps[] = [
   {
     value: 1,
     label: 'Name',
@@ -163,7 +163,6 @@ export const CharactersList = ({
         value={orderBy}
         onChange={(e) => onHandleOrderBy(Number(e.target.value))}
       />
-
       <Grid container className='rows'>
         <Input
           label='Cards per page'
