@@ -10,9 +10,10 @@
   },
   "private": false,
   "dependencies": {
-    "@j-meira/mui-theme": "^0.2.2",
+    "@j-meira/mui-theme": "^0.4.16",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
+    "intersection-observer": "^0.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.1",
