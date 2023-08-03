@@ -9,6 +9,7 @@ import {
   CharacterDetails,
   CharactersList,
   Loading,
+  SEO,
 } from '../../components';
 
 import {
@@ -57,6 +58,7 @@ export const Page = () => {
 
   return (
     <Grid container justifyContent='center' flexDirection='column'>
+      <SEO title='M-Heroes - Redux' />
       <CharactersList
         characters={characters}
         onGetCharacters={(params) => dispatch(getCharacters(params))}

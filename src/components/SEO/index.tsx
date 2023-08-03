@@ -3,9 +3,9 @@ export interface ISEOProps {
   title: string;
 }
 
-const description = '';
+const description = 'Marvel Heroes List in React';
 const type = 'summary_large_image';
-const name = '';
+const name = 'M-Heroes';
 export const SEO = ({ title }: ISEOProps) => (
   <Helmet>
     {/* Standard metadata tags */}
@@ -17,16 +17,16 @@ export const SEO = ({ title }: ISEOProps) => (
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
     {/* <meta property='og:image' content={} /> */}
-    <meta property='og:url' content={process.env.PUBLIC_URL} />
+    <meta property='og:url' content={process.env.REACT_APP_DOMAIN} />
     {/* End Facebook tags */}
 
     <meta
       property='og:image'
-      content={`${process.env.PUBLIC_URL}/thumbnail.jpg`}
+      content={`${process.env.REACT_APP_DOMAIN}/thumbnail.jpg`}
     />
     <meta
       name='twitter:image'
-      content={`${process.env.PUBLIC_URL}/thumbnail.jpg`}
+      content={`${process.env.REACT_APP_DOMAIN}/thumbnail.jpg`}
     />
 
     <meta name='docsearch:language' content='en' />

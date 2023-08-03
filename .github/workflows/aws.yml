@@ -1,7 +1,7 @@
 on:
   push:
     tags:
-      - latest
+      - latest-*
 
 name: AWS
 
@@ -21,6 +21,7 @@ jobs:
       - name: Make envfile
         run: |
           cat > .env
+          echo "REACT_APP_DOMAIN=https://${{ vars.S3_BUCKET }}" >> .env
           echo "REACT_APP_API_URL=${{ vars.API_URL }}" >> .env
           echo "REACT_APP_API_KEY=${{ secrets.API_KEY }}" >> .env
           echo "REACT_APP_API_HASH=${{ secrets.API_HASH }}" >> .env
@@ -55,4 +56,4 @@ jobs:
           aws-region: sa-east-1
 
       - name: Deploy to S3
-        run: aws s3 sync ./build/ s3://m-heroes.jm.app.br --delete
+        run: aws s3 sync ./build/ s3://${{ vars.S3_BUCKET }} --delete
