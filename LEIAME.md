@@ -8,7 +8,6 @@ Documentação e Ambiente Padrão de Desenvolvimento
 
 - [Introdução](#introdução)
 - [Requisitos](#requisitos)
-  - [Adicionar o yarn às variáveis de ambiente do sistema](#adicionar-o-yarn-às-variáveis-de-ambiente-do-sistema)
   - [Garantir permissões para o yarn](#garantir-permissões-para-o-yarn)
 - [Instalação](#instalação)
   - [Instalar o mkcert](#instalar-o-mkcert)
@@ -49,14 +48,6 @@ Antes de prosseguir com a instalação, verifique se você possui os seguintes p
 - [Node.js](https://nodejs.org/en/download/)
 - [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
 
-### Adicionar o yarn às variáveis de ambiente do sistema
-
-Adicione o seguinte caminho às variáveis de ambiente do sistema:
-
-```
-C:\Users\{username}\AppData\Local\Yarn\bin
-```
-
 ### Garantir permissões para o yarn
 
 Execute o seguinte comando no PowerShell como administrador:
@@ -64,8 +55,6 @@ Execute o seguinte comando no PowerShell como administrador:
 ```bash
 Set-ExecutionPolicy Unrestricted
 ```
-
-Observação: Se você não deseja executar em HTTPS, você pode pular as etapas 2, 3, 5, 6 e 8.
 
 ## Instalação
 

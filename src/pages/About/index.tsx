@@ -50,73 +50,73 @@ export const AboutPage = () => {
         </Typography>
         <Typography variant='body1' className='description'>
           <b>Using:</b>
-          <ul>
-            <li>
-              <a
-                href='https://mui-theme.jm.app.br'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Mui Theme;
-              </a>
-            </li>
-            <li>
-              <a
-                href='https://react.dev/reference/react/useContext'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                React Context;
-              </a>
-            </li>
-            <li>
-              <a
-                href='https://redux.js.org'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                Redux;
-              </a>
-            </li>
-          </ul>
         </Typography>
+        <ul>
+          <li>
+            <a
+              href='https://mui-theme.jm.app.br'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              Mui Theme;
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://react.dev/reference/react/useContext'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              React Context;
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://redux.js.org'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              Redux;
+            </a>
+          </li>
+        </ul>
         <Typography variant='body1' className='description'>
           <b>Prototype:</b>
-          <ul>
-            <li>
-              <a
-                href='https://xd.adobe.com/view/5192aaaf-a7a0-46e8-8b62-e1afba083a53-04c1/?fullscreen'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                on XD;
-              </a>
-            </li>
-            <li>
-              <a
-                href='https://www.behance.net/gallery/174274841/Marvel-Heroes'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                on Behance;
-              </a>
-            </li>
-          </ul>
         </Typography>
+        <ul>
+          <li>
+            <a
+              href='https://xd.adobe.com/view/5192aaaf-a7a0-46e8-8b62-e1afba083a53-04c1/?fullscreen'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              on XD;
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://www.behance.net/gallery/174274841/Marvel-Heroes'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              on Behance;
+            </a>
+          </li>
+        </ul>
         <Typography variant='body1' className='description'>
           <b>Repository:</b>
-          <ul>
-            <li>
-              <a
-                href='https://github.com/J-Meira/marvel-heroes'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                GitHub;
-              </a>
-            </li>
-          </ul>
         </Typography>
+        <ul>
+          <li>
+            <a
+              href='https://github.com/J-Meira/marvel-heroes'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              GitHub;
+            </a>
+          </li>
+        </ul>
       </Grid>
     </Grid>
   );
