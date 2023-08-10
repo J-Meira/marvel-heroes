@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { MultiProvider } from '@j-meira/mui-theme';
 
-import { Footer, Header } from './components';
+import { Footer, Header, UpdateSnackBar } from './components';
 import { AppRoutes } from './routes';
 
 export const App = () => (
@@ -29,6 +29,7 @@ export const App = () => (
       <Header />
       <AppRoutes />
       <Footer />
+      <UpdateSnackBar />
     </BrowserRouter>
   </MultiProvider>
 );
