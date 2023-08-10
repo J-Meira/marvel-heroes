@@ -8,7 +8,6 @@ Documentation and Standard Development Environment
 
 - [Introduction](#introduction)
 - [Requirements](#requirements)
-  - [Add yarn to system environment variables](#add-yarn-to-system-environment-variables)
   - [Ensure permissions for yarn](#ensure-permissions-for-yarn)
 - [Installation](#installation)
   - [Install mkcert](#install-mkcert)
@@ -47,14 +46,6 @@ Before proceeding with the installation, make sure you have the following prereq
 - [Node.js](https://nodejs.org/en/download/)
 - [Yarn](https://classic.yarnpkg.com/en/docs/install#windows-stable)
 
-### Add yarn to system environment variables
-
-Add the following path to the system environment variables:
-
-```
-C:\Users\{username}\AppData\Local\Yarn\bin
-```
-
 ### Ensure permissions for yarn
 
 Run the following command in PowerShell as an administrator:
@@ -62,8 +53,6 @@ Run the following command in PowerShell as an administrator:
 ```bash
 Set-ExecutionPolicy Unrestricted
 ```
-
-Note: If you don't want to run on HTTPS, you can skip steps 2, 3, 5, 6, and 8.
 
 ## Installation
 
