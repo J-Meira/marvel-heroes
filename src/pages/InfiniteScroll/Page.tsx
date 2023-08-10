@@ -17,7 +17,7 @@ import {
   CharacterCard,
   CharacterDetails,
   Loading,
-  orberByList,
+  orderByList,
 } from '../../components';
 
 import { useLoadingContext } from '../../contexts';
@@ -35,6 +35,7 @@ export const Page = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const observerTarget = useRef(null);
+  const refToTop = useRef<HTMLInputElement>(null);
   const { debounce } = useDebounce(500, true);
   const { backgroundColor } = useMultiContext();
   const { width } = useWindowDimensions();
@@ -79,7 +80,15 @@ export const Page = () => {
     const newOffset = offset + 20;
     setOffset(newOffset);
 
-    return getCharacters({ ...params, offset: newOffset }, true);
+    return getCharacters(
+      {
+        ...params,
+        offset: newOffset,
+        orderBy: testOrderBy(),
+        nameStartsWith: search !== '' ? search : undefined,
+      },
+      true,
+    );
   };
 
   const openDetail = (paramId: number) => {
@@ -98,13 +107,19 @@ export const Page = () => {
     if (id) navigate('/infinite-scroll');
   };
 
+  const testOrderBy = () => {
+    const test = orderByList.find((o) => o.value === orderBy);
+    return test?.obj.apiValue;
+  };
+
   useEffect(() => {
     debounce(() => {
-      const test = orberByList.find((o) => o.value === orderBy);
+      setOffset(0);
+      refToTop.current && refToTop.current.scrollIntoView();
       getCharacters(
         {
           ...params,
-          orderBy: test?.obj.apiValue,
+          orderBy: testOrderBy(),
           nameStartsWith: search !== '' ? search : undefined,
         },
         false,
@@ -181,11 +196,7 @@ export const Page = () => {
           autoFocus
           label='Search'
           model='icon'
-          grid={
-            mobile
-              ? { xs: 8, sm: 8, md: 8, lg: 8 }
-              : { xs: 6, sm: 6, md: 6, lg: 6 }
-          }
+          grid={{ xs: 6, sm: 6, md: 6, lg: 6 }}
           icon={<SearchIcon />}
           isNoFormik
           className='search'
@@ -195,15 +206,16 @@ export const Page = () => {
         <Input
           label='Order by'
           model='select'
-          grid={{ xs: 4, sm: 4, md: 4, lg: 4 }}
+          grid={{ xs: 6, sm: 6, md: 4, lg: 4 }}
           isNoFormik
+          NoNativeOptions
           className='order'
-          options={orberByList}
+          options={orderByList}
           value={orderBy}
           onChange={(e) => setOrderBy(Number(e.target.value))}
         />
         {!mobile && (
-          <Grid item xs={2}>
+          <Grid item xs={2} display='flex' alignItems='center'>
             <Typography variant='caption'>
               {`${totalOfCharacters > 0 ? 1 : 0}-${characters.length}
           of ${totalOfCharacters}`}
@@ -212,6 +224,7 @@ export const Page = () => {
         )}
       </Grid>
       <Grid container justifyContent='center' className='list'>
+        <span ref={refToTop}></span>
         {characters.map((character, i) => (
           <CharacterCard
             key={i}
@@ -226,7 +239,7 @@ export const Page = () => {
           {isLoading && !hide && (
             <Typography variant='caption'>Loading...</Typography>
           )}
-          {hide && (
+          {hide && characters.length > 0 && (
             <Typography variant='caption'>
               No more cards to display.
             </Typography>

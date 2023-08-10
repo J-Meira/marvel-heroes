@@ -43,7 +43,7 @@ export const pagesList: SelectOptionsProps[] = [
   },
 ];
 
-export const orberByList: SelectOptionsProps[] = [
+export const orderByList: SelectOptionsProps[] = [
   {
     value: 1,
     label: 'Name',
@@ -86,7 +86,7 @@ export const CharactersList = ({
   const [rowsPerPage, setRowsPerPage] = useState(initialRows);
 
   const onHandleOrderBy = (order: number) => {
-    const test = orberByList.find((o) => o.value === order);
+    const test = orderByList.find((o) => o.value === order);
     setOrderBy(order);
     setParams({
       ...params,
@@ -156,10 +156,11 @@ export const CharactersList = ({
       <Input
         label='Order by'
         model='select'
+        NoNativeOptions
         grid={{ md: 12, lg: 12 }}
         isNoFormik
         className='order'
-        options={orberByList}
+        options={orderByList}
         value={orderBy}
         onChange={(e) => onHandleOrderBy(Number(e.target.value))}
       />
@@ -167,6 +168,7 @@ export const CharactersList = ({
         <Input
           label='Cards per page'
           model='select'
+          NoNativeOptions
           isNoFormik
           grid={{ md: 6, lg: 6, sm: 6, xs: 6 }}
           options={pagesList}
