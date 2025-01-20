@@ -1,6 +1,8 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
+
 import { Paper } from '@mui/material';
 import { useMultiContext } from '@j-meira/mui-theme';
+
 import {
   AboutPage,
   ContextPage,

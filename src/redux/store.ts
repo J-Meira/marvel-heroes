@@ -1,6 +1,7 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import loadingReducer from './reducers/loading';
+
 import charactersReducer from './reducers/characters';
+import loadingReducer from './reducers/loading';
 
 export const store = configureStore({
   reducer: {
