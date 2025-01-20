@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { ICharacter, ICharacterDataWrapper } from '../../types';
 
 export interface CharactersState {

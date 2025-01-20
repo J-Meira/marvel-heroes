@@ -1,12 +1,14 @@
 import { setLoading, removeLoading } from '../actions';
-import { AppThunk } from '../store';
 import {
   getCharacter as getCharacterAction,
   getCharacters as getCharactersAction,
   clearCharacter as clearCharacterAction,
 } from '../reducers/characters';
-import { IGetAll } from '../../types';
+
+import { AppThunk } from '../store';
+
 import { CharactersService } from '../../services';
+import { IGetAll } from '../../types';
 
 export const getCharacters =
   (params: IGetAll): AppThunk =>

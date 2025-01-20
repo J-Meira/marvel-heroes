@@ -32,8 +32,6 @@ jobs:
           echo "VITE_API_HASH=${{ secrets.API_HASH }}" >> .env
           echo "VITE_VERSION=${{ env.TAG_NAME }}" >> .env
           echo "VITE_V_DATE=$(date +'%Y-%m-%dT%H:%M:%S')" >> .env
-          echo "VITE_VERSION=${{ env.TAG_NAME }}" >> .env
-          echo "VITE_V_DATE=$(date +'%Y-%m-%dT%H:%M:%S')" >> .env
           echo "$(<.env)"
 
       - name: Build and Push Docker Image
