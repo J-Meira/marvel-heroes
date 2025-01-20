@@ -11,23 +11,16 @@ import {
 } from '../pages';
 
 export const AppRoutes = () => {
-  const { backgroundColor } = useMultiContext();
+  const { dark } = useMultiContext();
   const location = useLocation();
 
   const getClassName = () =>
     `main-container${
       location.pathname.indexOf('infinite-scroll') > 0 ? ' infinite' : ''
-    }`;
+    } ${dark ? 'main-container-dark' : ''}`;
 
   return (
-    <Paper
-      sx={{
-        backgroundColor: backgroundColor,
-      }}
-      className={getClassName()}
-      square
-      elevation={0}
-    >
+    <Paper className={getClassName()} square elevation={0}>
       <Routes>
         <Route path='/about' element={<AboutPage />} />
         <Route path='/context' element={<ContextPage />} />

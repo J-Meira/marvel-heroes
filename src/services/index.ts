@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const baseURL = process.env.REACT_APP_API_URL;
-const apikey = process.env.REACT_APP_API_KEY;
-const hash = process.env.REACT_APP_API_HASH;
+const apikey = import.meta.env.VITE_API_KEY;
+const baseURL = import.meta.env.VITE_API_URL;
+const hash = import.meta.env.VITE_API_HASH;
 
 const API = axios.create({
   baseURL: baseURL,

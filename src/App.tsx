@@ -1,7 +1,8 @@
 import { BrowserRouter } from 'react-router-dom';
+
 import { MultiProvider } from '@j-meira/mui-theme';
 
-import { Footer, Header, UpdateSnackBar } from './components';
+import { Footer, Header, PWABadge } from './components';
 import { AppRoutes } from './routes';
 
 export const App = () => (
@@ -12,16 +13,16 @@ export const App = () => (
     snackMax={3}
     palette={{
       primary: {
-        light: '#ffb402',
-        main: '#FF9100',
-        dark: '#ff7100',
-        contrastText: '#fff',
+        light: '#F04647',
+        main: '#E62429',
+        dark: '#C7081F',
+        contrastText: '#FFFFFF',
       },
       secondary: {
-        light: '#74706f',
+        light: '#74706F',
         main: '#494544',
-        dark: '#221e1d',
-        contrastText: '#fff',
+        dark: '#221E1D',
+        contrastText: '#FFFFFF',
       },
     }}
   >
@@ -29,7 +30,7 @@ export const App = () => (
       <Header />
       <AppRoutes />
       <Footer />
-      <UpdateSnackBar />
+      <PWABadge />
     </BrowserRouter>
   </MultiProvider>
 );

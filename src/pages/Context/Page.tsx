@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Grid } from '@mui/material';
+import { Grid2 } from '@mui/material';
 import { useDebounce } from '@j-meira/mui-theme';
 
 import {
@@ -69,7 +69,7 @@ export const Page = () => {
   }, [id]);
 
   return (
-    <Grid container justifyContent='center' flexDirection='column'>
+    <Grid2 container justifyContent='center' flexDirection='column'>
       <CharactersList
         characters={characters}
         onGetCharacters={getCharacters}
@@ -84,6 +84,6 @@ export const Page = () => {
           data={character}
         />
       )}
-    </Grid>
+    </Grid2>
   );
 };

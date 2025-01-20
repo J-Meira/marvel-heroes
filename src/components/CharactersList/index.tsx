@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Grid, Typography } from '@mui/material';
-import { Search as SearchIcon } from '@mui/icons-material';
+
+import { Grid2, Typography } from '@mui/material';
 import {
   DataTablePagination,
   Input,
@@ -8,6 +8,8 @@ import {
   SelectOptionsProps,
   useDebounce,
 } from '@j-meira/mui-theme';
+import { MdSearch as SearchIcon } from 'react-icons/md';
+
 import { CharacterCard, ICharacterCardProps } from '..';
 import { ICharacter, IGetAll } from '../../types';
 
@@ -143,33 +145,36 @@ export const CharactersList = ({
   return (
     <div className='characters-list'>
       <Input
+        name='search'
         autoFocus
         label='Search'
         model='icon'
         grid={{ md: 12, lg: 12 }}
         icon={<SearchIcon />}
-        isNoFormik
+        localControl
         className='search'
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
       <Input
+        name='order-by'
         label='Order by'
         model='select'
-        NoNativeOptions
+        noNativeOptions
         grid={{ md: 12, lg: 12 }}
-        isNoFormik
+        localControl
         className='order'
         options={orderByList}
         value={orderBy}
         onChange={(e) => onHandleOrderBy(Number(e.target.value))}
       />
-      <Grid container className='rows'>
+      <Grid2 container className='rows'>
         <Input
+          name='rows-per-page'
           label='Cards per page'
           model='select'
-          NoNativeOptions
-          isNoFormik
+          noNativeOptions
+          localControl
           grid={{ md: 6, lg: 6, sm: 6, xs: 6 }}
           options={pagesList}
           value={rowsPerPage}
@@ -181,8 +186,8 @@ export const CharactersList = ({
           }
           of ${totalOfCharacters}`}
         </Typography>
-      </Grid>
-      <Grid container justifyContent='center' className='list'>
+      </Grid2>
+      <Grid2 container justifyContent='center' className='list'>
         {characters.map((character, i) => (
           <CharacterCard
             key={i}
@@ -193,7 +198,7 @@ export const CharactersList = ({
         {characters.length === 0 && search !== '' && (
           <Typography variant='caption'>No cards to display.</Typography>
         )}
-      </Grid>
+      </Grid2>
       <DataTablePagination
         title='character-list'
         pages={pages}

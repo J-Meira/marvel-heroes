@@ -3,8 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import 'intersection-observer';
 
-import { Box, Grid, Typography } from '@mui/material';
-import { Search as SearchIcon } from '@mui/icons-material';
+import { Box, Grid2, Typography } from '@mui/material';
 import {
   Button,
   Input,
@@ -12,6 +11,7 @@ import {
   useMultiContext,
   useWindowDimensions,
 } from '@j-meira/mui-theme';
+import { MdSearch as SearchIcon } from 'react-icons/md';
 
 import {
   CharacterCard,
@@ -37,7 +37,7 @@ export const Page = () => {
   const observerTarget = useRef(null);
   const refToTop = useRef<HTMLInputElement>(null);
   const { debounce } = useDebounce(500, true);
-  const { backgroundColor } = useMultiContext();
+  const { dark } = useMultiContext();
   const { width } = useWindowDimensions();
   const { isLoading, setLoading, removeLoading } = useLoadingContext();
   const [search, setSearch] = useState('');
@@ -61,20 +61,20 @@ export const Page = () => {
       removeLoading();
       if (result) {
         if (more) {
-          setCharacters((prevCharacters) => [
+          return setCharacters((prevCharacters) => [
             ...prevCharacters,
             ...result.data.results,
           ]);
-        } else {
-          setCharacters(result.data.results);
-          setTotalOfCharacters(result.data.total);
         }
+
+        setCharacters(result.data.results);
+        setTotalOfCharacters(result.data.total);
       }
     });
   };
 
-  const getMoreCharacters = (scrollTigger: boolean) => {
-    if (scrollTigger && (isLoading || totalOfCharacters === 0))
+  const getMoreCharacters = (scrollTrigger: boolean) => {
+    if (scrollTrigger && (isLoading || totalOfCharacters === 0))
       return null;
 
     const newOffset = offset + 20;
@@ -158,7 +158,9 @@ export const Page = () => {
           getMoreCharacters(true);
           observer.unobserve(entries[0].target);
           setHide(false);
-        } else if (offset >= totalOfCharacters) {
+        }
+
+        if (offset >= totalOfCharacters) {
           setHide(true);
         }
       },
@@ -184,46 +186,45 @@ export const Page = () => {
 
   return (
     <Box className='infinite-scroll'>
-      <Grid
-        sx={{
-          backgroundColor: backgroundColor,
-        }}
+      <Grid2
         container
-        className='actions'
+        className={`actions bar${dark ? '-dark' : ''}`}
         spacing={2}
       >
         <Input
+          name='search'
           autoFocus
           label='Search'
           model='icon'
           grid={{ xs: 6, sm: 6, md: 6, lg: 6 }}
           icon={<SearchIcon />}
-          isNoFormik
+          localControl
           className='search'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <Input
+          name='orderBy'
           label='Order by'
           model='select'
           grid={{ xs: 6, sm: 6, md: 4, lg: 4 }}
-          isNoFormik
-          NoNativeOptions
+          localControl
+          noNativeOptions
           className='order'
           options={orderByList}
           value={orderBy}
           onChange={(e) => setOrderBy(Number(e.target.value))}
         />
         {!mobile && (
-          <Grid item xs={2} display='flex' alignItems='center'>
+          <Grid2 size={2} display='flex' alignItems='center'>
             <Typography variant='caption'>
               {`${totalOfCharacters > 0 ? 1 : 0}-${characters.length}
           of ${totalOfCharacters}`}
             </Typography>
-          </Grid>
+          </Grid2>
         )}
-      </Grid>
-      <Grid container justifyContent='center' className='list'>
+      </Grid2>
+      <Grid2 container justifyContent='center' className='list'>
         <span ref={refToTop}></span>
         {characters.map((character, i) => (
           <CharacterCard
@@ -232,7 +233,7 @@ export const Page = () => {
             openDetail={(id) => openDetail(id)}
           />
         ))}
-        <Grid item xs={12} className='list-footer' ref={observerTarget}>
+        <Grid2 size={12} className='list-footer' ref={observerTarget}>
           {characters.length === 0 && search !== '' && (
             <Typography variant='caption'>No cards to display.</Typography>
           )}
@@ -253,8 +254,8 @@ export const Page = () => {
               Load More
             </Button>
           )}
-        </Grid>
-      </Grid>
+        </Grid2>
+      </Grid2>
       <Loading isLoading={isLoading && !local} />
       {character && (
         <CharacterDetails
