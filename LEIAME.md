@@ -121,11 +121,11 @@ ATENÇÃO: Certifique-se de que o navegador esteja fechado antes de prosseguir.
 Crie um arquivo `.env` no diretório raiz do projeto e adicione as seguintes variáveis de ambiente:
 
 ```bash
-REACT_APP_API_URL=https://url.marvel.com/
-REACT_APP_API_KEY=[marvel api key]
-REACT_APP_API_HASH=[marvel hash]
-REACT_APP_VERSION=v-0.0.1
-REACT_APP_V_DATE=2022-02-18T20:21:52
+VITE_API_URL=https://url.marvel.com/
+VITE_API_KEY=[marvel api key]
+VITE_API_HASH=[marvel hash]
+VITE_VERSION=v-0.0.1
+VITE_V_DATE=2022-02-18T20:21:52
 PORT=3008
 # As seguintes configurações devem ser definidas apenas se os certificados foram criados e instalados
 HOST=dev.jm.app.br

@@ -1,7 +1,7 @@
 import { MouseEvent, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import { Box, Typography } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
 import {
   Button,
   DarkSwitch,
@@ -9,11 +9,12 @@ import {
   ListMenu,
   ListMenuProps,
 } from '@j-meira/mui-theme';
+import { MdMenu as MenuIcon } from 'react-icons/md';
 
 const initialMenu: ListMenuProps = {
-  open: false,
   anchorEl: null,
   list: [],
+  open: false,
 };
 
 const pages = [
@@ -85,6 +86,7 @@ export const Header = () => {
                   className={
                     isSelected(p.link) ? 'menu-selected' : undefined
                   }
+                  sx={{ border: 'none' }}
                   variant='outlined'
                   fullWidth={false}
                   onClick={() => navigate(p.link)}

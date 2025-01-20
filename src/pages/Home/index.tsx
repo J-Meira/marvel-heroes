@@ -1,14 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { Box, Grid, Typography } from '@mui/material';
-import { Button } from '@j-meira/mui-theme';
 
-import { ReactComponent as LogoContext } from '../../assets/logo-context.svg';
-import { ReactComponent as LogoRedux } from '../../assets/logo-redux.svg';
+import { Box, Grid2, Typography } from '@mui/material';
+import { Button } from '@j-meira/mui-theme';
 
 export const HomePage = () => {
   const navigate = useNavigate();
+
   return (
-    <Grid container className='home-page'>
+    <Grid2 container className='home-page'>
       <Typography variant='h2' component='h2'>
         To start choose the state control framework:
       </Typography>
@@ -18,7 +17,7 @@ export const HomePage = () => {
           onClick={() => navigate('/context')}
           fullWidth={false}
         >
-          <LogoContext />
+          <img src='/assets/logo-context.svg' alt='logo-context' />
           <Typography variant='caption'>With Context</Typography>
         </Button>
         <Button
@@ -26,10 +25,10 @@ export const HomePage = () => {
           onClick={() => navigate('/redux')}
           fullWidth={false}
         >
-          <LogoRedux />
+          <img src='/assets/logo-redux.svg' alt='logo-redux' />
           <Typography variant='caption'>With Redux</Typography>
         </Button>
       </Box>
-    </Grid>
+    </Grid2>
   );
 };

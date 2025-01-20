@@ -1,4 +1,5 @@
 import { useMultiContext } from '@j-meira/mui-theme';
+
 import { ICharacter } from '../../types';
 
 export interface ICharacterCardProps {
@@ -11,6 +12,7 @@ export const CharacterCard = ({
   openDetail,
 }: ICharacterCardProps) => {
   const { dark } = useMultiContext();
+
   return (
     <div
       className={`character-card${dark ? ' character-card-dark' : ''}`}

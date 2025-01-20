@@ -31,13 +31,13 @@ Marvel Heroes List in React.
 
 [Click here](https://m-heroes.jm.app.br) to access the demo published on AWS server.
 
-I based the application on the Material Designer system, leveraging my expertise as a senior front-end developer focusing on React with TypeScript. To streamline the development process, I utilized my own developer theme called Mui Theme, which aligns with Mui Core V5. This theme serves as a centralized resource for setting up and defining components, allowing me to efficiently manage and maintain multiple projects in a single place. If you'd like to explore the Mui Theme, you can find it at [Mui Theme](https://mui-theme.jm.app.br). This approach not only enhances consistency across projects but also simplifies maintenance, making it easier to update and customize the components as needed.
+I based the application on the Material Designer system, leveraging my expertise as a senior front-end developer focusing on React with TypeScript. To streamline the development import.meta, I utilized my own developer theme called Mui Theme, which aligns with Mui Core V5. This theme serves as a centralized resource for setting up and defining components, allowing me to efficiently manage and maintain multiple projects in a single place. If you'd like to explore the Mui Theme, you can find it at [Mui Theme](https://mui-theme.jm.app.br). This approach not only enhances consistency across projects but also simplifies maintenance, making it easier to update and customize the components as needed.
 
 To handle local state management, I employed the widely used and well-known 'useState' hook from React. This hook provides a simple and intuitive way to manage state within individual components. By utilizing 'useState', I was able to easily track and update the state, resulting in a clean and maintainable codebase.
 
 In order to effectively handle global state management, I showcased my versatility by utilizing both the context API from React and Redux. I implemented these two frameworks in separate routes within the project, namely '/context' and '/redux'. This approach demonstrates my ability to work with different frameworks and adapt to various project requirements. By leveraging the context API, I was able to manage state at a higher level and share data between multiple components. On the other hand, utilizing Redux allowed me to establish a robust and scalable global state management system, leveraging its powerful features such as middleware and time-travel debugging. This combination of utilizing both the context API and Redux showcases my proficiency in selecting the most suitable tools based on project needs and requirements.
 
-Personally, I have a preference for using Redux due to its extensive ecosystem and well-established patterns for managing complex state. While I have previously utilized Redux in my projects, this particular application marks my first time using it in conjunction with TypeScript. By incorporating TypeScript into the Redux workflow, I was able to leverage its static typing and enhanced developer experience, ensuring more robust and error-free code. This experience further exemplifies my adaptability and willingness to explore new technologies and integrate them seamlessly into my development process.
+Personally, I have a preference for using Redux due to its extensive ecosystem and well-established patterns for managing complex state. While I have previously utilized Redux in my projects, this particular application marks my first time using it in conjunction with TypeScript. By incorporating TypeScript into the Redux workflow, I was able to leverage its static typing and enhanced developer experience, ensuring more robust and error-free code. This experience further exemplifies my adaptability and willingness to explore new technologies and integrate them seamlessly into my development import.meta.
 
 ## Requirements
 
@@ -109,7 +109,7 @@ ATTENTION: Make sure the browser is closed before proceeding.
 
 ![Certificate installation](./readme_images/07.png)
 
-(Same process as the previous certificate)
+(Same import.meta as the previous certificate)
 
 ## Configuration
 
@@ -118,11 +118,11 @@ ATTENTION: Make sure the browser is closed before proceeding.
 Create a `.env` file in the project root directory and add the following environment variables:
 
 ```bash
-REACT_APP_API_URL=https://url.marvel.com/
-REACT_APP_API_KEY=[marvel api key]
-REACT_APP_API_HASH=[marvel hash]
-REACT_APP_VERSION=v-0.0.1
-REACT_APP_V_DATE=2022-02-18T20:21:52
+VITE_API_URL=https://url.marvel.com/
+VITE_API_KEY=[marvel api key]
+VITE_API_HASH=[marvel hash]
+VITE_VERSION=v-0.0.1
+VITE_V_DATE=2022-02-18T20:21:52
 PORT=3008
 # The following should be set only if the certificates were created and installed
 HOST=dev.jm.app.br
@@ -187,6 +187,6 @@ yarn start
 
 Congratulations! You have successfully set up the Marvel Heroes application. After running the application, you should see the expected result in the browser:
 
-![Final result of the process](./readme_images/08.png)
+![Final result of the import.meta](./readme_images/08.png)
 
 If you have any questions or suggestions for improvement, please contact [J.Meira](https://github.com/J-Meira).

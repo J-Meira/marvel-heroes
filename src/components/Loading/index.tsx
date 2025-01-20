@@ -1,7 +1,5 @@
 import { Box, CircularProgress, Paper } from '@mui/material';
 
-import { ReactComponent as Logo } from '../../assets/icon-marvel.svg';
-
 export interface ILoadingProps {
   isLoading: boolean;
 }
@@ -49,15 +47,15 @@ export const Loading = ({ isLoading }: ILoadingProps) => (
           alignItems: 'center',
         }}
       >
-        <Logo
-          style={{
-            height: '95px',
-          }}
+        <img
+          src='assets/icon-marvel.svg'
+          alt='marvel-logo'
+          height='80px'
         />
         <CircularProgress
           size={130}
+          color='primary'
           sx={{
-            color: '#fff',
             position: 'absolute',
             top: 0,
             left: 0,

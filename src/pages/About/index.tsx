@@ -1,22 +1,22 @@
-import moment from 'moment';
-import { Grid, Typography } from '@mui/material';
+import dayjs from 'dayjs';
+import { Grid2, Typography } from '@mui/material';
 
 const date = new Date();
 
 export const AboutPage = () => {
   const getReleaseDate = () => {
-    const date = moment(
-      process.env.REACT_APP_V_DATE || '2023-07-01T21:00:00',
+    const date = dayjs(
+      import.meta.env.VITE_V_DATE || '2023-07-01T21:00:00',
     );
-
-    return `${date.format('MM/DD/YYYY')} - ${date
-      .subtract(3, 'hours')
-      .format('hh:mm A')}`;
+    6;
+    return `${date.format('MM/DD/YYYY')} - ${date.format(
+      'hh:mm A',
+    )} (UTC)`;
   };
 
   return (
-    <Grid container className='about-page'>
-      <Grid item xs={12}>
+    <Grid2 container className='about-page'>
+      <Grid2 size={12}>
         <Typography variant='h2' className='page-title'>
           Marvel Heroes List in{' '}
           <a
@@ -28,7 +28,7 @@ export const AboutPage = () => {
           </a>
         </Typography>
         <Typography variant='h4' className='app-version'>
-          {process.env.REACT_APP_VERSION} of {getReleaseDate()}
+          {import.meta.env.VITE_VERSION} of {getReleaseDate()}
         </Typography>
         <Typography variant='body1' className='description'>
           {'Developer by '}
@@ -86,7 +86,7 @@ export const AboutPage = () => {
         <ul>
           <li>
             <a
-              href='https://xd.adobe.com/view/5192aaaf-a7a0-46e8-8b62-e1afba083a53-04c1/?fullscreen'
+              href='https://xd.adobe.com/view/e3ae5e7f-d919-4ce6-b68e-b8a6e2f65aff-b6fd/?fullscreen'
               rel='noopener noreferrer'
               target='_blank'
             >
@@ -95,7 +95,7 @@ export const AboutPage = () => {
           </li>
           <li>
             <a
-              href='https://www.behance.net/gallery/174274841/Marvel-Heroes'
+              href='https://www.behance.net/gallery/217178049/M-Heroes'
               rel='noopener noreferrer'
               target='_blank'
             >
@@ -117,7 +117,7 @@ export const AboutPage = () => {
             </a>
           </li>
         </ul>
-      </Grid>
-    </Grid>
+      </Grid2>
+    </Grid2>
   );
 };

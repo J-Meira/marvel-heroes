@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Grid } from '@mui/material';
+import { Grid2 } from '@mui/material';
 import { useDebounce } from '@j-meira/mui-theme';
 
 import { useAppDispatch, useAppSelector } from '../../redux';
@@ -56,7 +56,7 @@ export const Page = () => {
   }, [id]);
 
   return (
-    <Grid container justifyContent='center' flexDirection='column'>
+    <Grid2 container justifyContent='center' flexDirection='column'>
       <CharactersList
         characters={characters}
         onGetCharacters={(params) => dispatch(getCharacters(params))}
@@ -71,6 +71,6 @@ export const Page = () => {
           data={character}
         />
       )}
-    </Grid>
+    </Grid2>
   );
 };

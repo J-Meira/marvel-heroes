@@ -2,11 +2,12 @@ import {
   Dialog,
   DialogContent,
   IconButton,
-  Grid,
+  Grid2,
   Typography,
 } from '@mui/material';
-import { Close as CloseIcon } from '@mui/icons-material';
 import { useMultiContext } from '@j-meira/mui-theme';
+import { MdClose as CloseIcon } from 'react-icons/md';
+
 import { ICharacter } from '../../types';
 
 export interface ICharacterDetailsProps {
@@ -21,14 +22,15 @@ export const CharacterDetails = ({
   toggle,
 }: ICharacterDetailsProps) => {
   const { dark } = useMultiContext();
+
   return (
     <Dialog
-      open={open}
-      onClose={toggle}
-      aria-labelledby='character-details'
       className={`character-details${
         dark ? ' character-details-dark' : ''
       }`}
+      aria-labelledby='character-details'
+      onClose={toggle}
+      open={open}
     >
       <IconButton
         aria-label='close'
@@ -38,28 +40,26 @@ export const CharacterDetails = ({
         <CloseIcon />
       </IconButton>
       <DialogContent>
-        <Grid container spacing={2}>
-          <Grid
-            item
-            xs={12}
-            sm={5}
+        <Grid2 container spacing={2}>
+          <Grid2
             className='hero-img'
+            size={{ xs: 12, sm: 5 }}
             style={{
               backgroundImage: `url('${`${data.thumbnail.path}/portrait_uncanny.${data.thumbnail.extension}`.replace(
                 'http:',
                 'https:',
               )}')`,
             }}
-          ></Grid>
-          <Grid item xs={12} sm={7}>
+          ></Grid2>
+          <Grid2 size={{ xs: 12, sm: 7 }}>
             <Typography component='h3' className='hero-name'>
               {data.name}
             </Typography>
             <Typography variant='body1' className='hero-resume'>
               {data.description || 'No description'}
             </Typography>
-          </Grid>
-        </Grid>
+          </Grid2>
+        </Grid2>
       </DialogContent>
     </Dialog>
   );
