@@ -2,7 +2,7 @@ import {
   Dialog,
   DialogContent,
   IconButton,
-  Grid2,
+  Grid,
   Typography,
 } from '@mui/material';
 import { useMultiContext } from '@j-meira/mui-theme';
@@ -40,8 +40,8 @@ export const CharacterDetails = ({
         <CloseIcon />
       </IconButton>
       <DialogContent>
-        <Grid2 container spacing={2}>
-          <Grid2
+        <Grid container spacing={2}>
+          <Grid
             className='hero-img'
             size={{ xs: 12, sm: 5 }}
             style={{
@@ -50,16 +50,16 @@ export const CharacterDetails = ({
                 'https:',
               )}')`,
             }}
-          ></Grid2>
-          <Grid2 size={{ xs: 12, sm: 7 }}>
+          ></Grid>
+          <Grid size={{ xs: 12, sm: 7 }}>
             <Typography component='h3' className='hero-name'>
               {data.name}
             </Typography>
             <Typography variant='body1' className='hero-resume'>
               {data.description || 'No description'}
             </Typography>
-          </Grid2>
-        </Grid2>
+          </Grid>
+        </Grid>
       </DialogContent>
     </Dialog>
   );

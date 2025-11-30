@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { Grid2, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 const date = new Date();
 
@@ -8,15 +8,14 @@ export const AboutPage = () => {
     const date = dayjs(
       import.meta.env.VITE_V_DATE || '2023-07-01T21:00:00',
     );
-    6;
     return `${date.format('MM/DD/YYYY')} - ${date.format(
       'hh:mm A',
     )} (UTC)`;
   };
 
   return (
-    <Grid2 container className='about-page'>
-      <Grid2 size={12}>
+    <Grid container className='about-page'>
+      <Grid size={12}>
         <Typography variant='h2' className='page-title'>
           Marvel Heroes List in{' '}
           <a
@@ -117,7 +116,7 @@ export const AboutPage = () => {
             </a>
           </li>
         </ul>
-      </Grid2>
-    </Grid2>
+      </Grid>
+    </Grid>
   );
 };

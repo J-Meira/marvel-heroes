@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import 'intersection-observer';
 
-import { Box, Grid2, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import {
   Button,
   Input,
@@ -115,7 +115,9 @@ export const Page = () => {
   useEffect(() => {
     debounce(() => {
       setOffset(0);
-      refToTop.current && refToTop.current.scrollIntoView();
+      if (refToTop.current) {
+        refToTop.current.scrollIntoView();
+      }
       getCharacters(
         {
           ...params,
@@ -186,7 +188,7 @@ export const Page = () => {
 
   return (
     <Box className='infinite-scroll'>
-      <Grid2
+      <Grid
         container
         className={`actions bar${dark ? '-dark' : ''}`}
         spacing={2}
@@ -216,15 +218,15 @@ export const Page = () => {
           onChange={(e) => setOrderBy(Number(e.target.value))}
         />
         {!mobile && (
-          <Grid2 size={2} display='flex' alignItems='center'>
+          <Grid size={2} display='flex' alignItems='center'>
             <Typography variant='caption'>
               {`${totalOfCharacters > 0 ? 1 : 0}-${characters.length}
           of ${totalOfCharacters}`}
             </Typography>
-          </Grid2>
+          </Grid>
         )}
-      </Grid2>
-      <Grid2 container justifyContent='center' className='list'>
+      </Grid>
+      <Grid container justifyContent='center' className='list'>
         <span ref={refToTop}></span>
         {characters.map((character, i) => (
           <CharacterCard
@@ -233,7 +235,7 @@ export const Page = () => {
             openDetail={(id) => openDetail(id)}
           />
         ))}
-        <Grid2 size={12} className='list-footer' ref={observerTarget}>
+        <Grid size={12} className='list-footer' ref={observerTarget}>
           {characters.length === 0 && search !== '' && (
             <Typography variant='caption'>No cards to display.</Typography>
           )}
@@ -254,8 +256,8 @@ export const Page = () => {
               Load More
             </Button>
           )}
-        </Grid2>
-      </Grid2>
+        </Grid>
+      </Grid>
       <Loading isLoading={isLoading && !local} />
       {character && (
         <CharacterDetails

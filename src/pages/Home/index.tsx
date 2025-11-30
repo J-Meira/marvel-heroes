@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 
-import { Box, Grid2, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { Button } from '@j-meira/mui-theme';
 
 export const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <Grid2 container className='home-page'>
+    <Grid container className='home-page'>
       <Typography variant='h2' component='h2'>
         To start choose the state control framework:
       </Typography>
@@ -29,6 +29,6 @@ export const HomePage = () => {
           <Typography variant='caption'>With Redux</Typography>
         </Button>
       </Box>
-    </Grid2>
+    </Grid>
   );
 };

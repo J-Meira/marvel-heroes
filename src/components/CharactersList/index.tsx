@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Grid2, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import {
   DataTablePagination,
   Input,
@@ -168,7 +168,7 @@ export const CharactersList = ({
         value={orderBy}
         onChange={(e) => onHandleOrderBy(Number(e.target.value))}
       />
-      <Grid2 container className='rows'>
+      <Grid container className='rows'>
         <Input
           name='rows-per-page'
           label='Cards per page'
@@ -186,8 +186,8 @@ export const CharactersList = ({
           }
           of ${totalOfCharacters}`}
         </Typography>
-      </Grid2>
-      <Grid2 container justifyContent='center' className='list'>
+      </Grid>
+      <Grid container justifyContent='center' className='list'>
         {characters.map((character, i) => (
           <CharacterCard
             key={i}
@@ -198,7 +198,7 @@ export const CharactersList = ({
         {characters.length === 0 && search !== '' && (
           <Typography variant='caption'>No cards to display.</Typography>
         )}
-      </Grid2>
+      </Grid>
       <DataTablePagination
         title='character-list'
         pages={pages}
